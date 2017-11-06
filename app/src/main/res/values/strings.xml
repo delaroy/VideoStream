@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VideoStream</string>
+    <string name="settings_title">videoStream Settings</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="no_video">No videos found.</string>
+
+    <string name="settings_search_name_label">Video Search Name</string>
+    <string name="settings_search_name_key" translatable="false">search_name</string>
+    <string name="settings_search_name_default" translatable="false">Big Buck Bunny</string>
+</resources>
