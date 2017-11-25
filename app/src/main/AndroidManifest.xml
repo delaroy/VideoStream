@@ -27,6 +27,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.delaroystudios.videostream.MainActivity"/>
         </activity>
+        <activity
+            android:name=".VideoPlayer"
+            android:screenOrientation="nosensor">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.delaroystudios.videostream.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

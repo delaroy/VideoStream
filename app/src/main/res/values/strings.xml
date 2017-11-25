@@ -8,4 +8,5 @@
     <string name="settings_search_name_label">Video Search Name</string>
     <string name="settings_search_name_key" translatable="false">search_name</string>
     <string name="settings_search_name_default" translatable="false">Big Buck Bunny</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
 </resources>

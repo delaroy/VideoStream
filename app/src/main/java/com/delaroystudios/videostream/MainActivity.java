@@ -25,6 +25,9 @@ import com.delaroystudios.videostream.data.VideoStreamLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.delaroystudios.videostream.VideoPlayer.EXTRA_TITLE;
+import static com.delaroystudios.videostream.VideoPlayer.EXTRA_VIDEOID;
+
 public class MainActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<VideoStream>>,
         SharedPreferences.OnSharedPreferenceChangeListener{
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity
             "https://www.alluc.ee/api/search/stream/?";
 
     private static final int VIDEOSTREAM_LOADER_ID = 1;
+    public static final String API_KEY = "";
 
     private VideoStreamAdapter mAdapter;
 
@@ -68,8 +72,13 @@ public class MainActivity extends AppCompatActivity
 
                 VideoStream currentStream = mAdapter.getItem(position);
 
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(currentStream.getHostUrl()));
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                Uri uri = Uri.parse(currentStream.getHostUrl());
+                String v = uri.getQueryParameter("v");
+
+                Intent intent = new Intent(MainActivity.this, VideoPlayer.class);
+                intent.putExtra(EXTRA_TITLE, currentStream.getTitle());
+                intent.putExtra(EXTRA_VIDEOID, v);
                 startActivity(intent);
             }
         });
